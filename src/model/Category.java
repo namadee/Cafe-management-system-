@@ -6,25 +6,26 @@ package model;
 
 /**
  *
- * @author 94773
+ * @author Namadee Shakya
  */
 public class Category {
     private int id;
     private String name;
-    
-    public int getId(){
+
+    public int getId() {
         return id;
     }
-    
-    public void setId(int id){
-        this.id = id ;
+
+    public void setId(int id) {
+        this.id = id;
     }
-    
-    public String getName(){
+
+    public String getName() {
         return name;
     }
-    
-    public void setName(String name){
-        this.name = name ;
+
+    public void setName(String name) {
+        this.name = name;
     }
+    
 }
