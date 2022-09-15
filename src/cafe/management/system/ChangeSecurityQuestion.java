@@ -60,6 +60,7 @@ public class ChangeSecurityQuestion extends javax.swing.JFrame {
         txtPassword = new javax.swing.JPasswordField();
         btnUpdate = new javax.swing.JButton();
         btnClear = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocation(new java.awt.Point(350, 134));
@@ -72,14 +73,17 @@ public class ChangeSecurityQuestion extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cafe/system/icons8-question-mark-48.png"))); // NOI18N
         jLabel1.setText("Change Sequrity Question");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 243, 39));
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cafe/system/icons8-close-window-24.png"))); // NOI18N
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(581, 6, -1, -1));
+        jButton1.setText("Exit");
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 10, 50, 20));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Old Sequrity Question");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(137, 122, -1, -1));
 
@@ -87,6 +91,7 @@ public class ChangeSecurityQuestion extends javax.swing.JFrame {
         getContentPane().add(txtOldSQ, new org.netbeans.lib.awtextra.AbsoluteConstraints(377, 118, 253, -1));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("New Sequrity Question");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(137, 174, -1, -1));
 
@@ -99,6 +104,7 @@ public class ChangeSecurityQuestion extends javax.swing.JFrame {
         getContentPane().add(txtNewSQ, new org.netbeans.lib.awtextra.AbsoluteConstraints(377, 170, 253, -1));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("New Answer");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(137, 228, -1, -1));
 
@@ -116,6 +122,7 @@ public class ChangeSecurityQuestion extends javax.swing.JFrame {
         getContentPane().add(txtNewAns, new org.netbeans.lib.awtextra.AbsoluteConstraints(377, 224, 253, -1));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Password");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(137, 280, -1, -1));
 
@@ -146,6 +153,9 @@ public class ChangeSecurityQuestion extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnClear, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 319, -1, -1));
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/bg light small.png"))); // NOI18N
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 820, 430));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -230,6 +240,7 @@ public class ChangeSecurityQuestion extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JTextField txtNewAns;
     private javax.swing.JTextField txtNewSQ;
     private javax.swing.JTextField txtOldSQ;

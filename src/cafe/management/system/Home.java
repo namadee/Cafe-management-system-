@@ -53,44 +53,55 @@ public class Home extends javax.swing.JFrame {
         btnNewProduct = new javax.swing.JButton();
         btnViewEditDeleteProduct = new javax.swing.JButton();
         btnVerifyUsers = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jButton1.setBackground(new java.awt.Color(80, 34, 1));
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Logout");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 20, -1, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, -1, -1));
 
+        jButton2.setBackground(new java.awt.Color(80, 34, 1));
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Place Order");
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 20, -1, -1));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, -1, -1));
 
+        jButton3.setBackground(new java.awt.Color(80, 34, 1));
+        jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText("Change password");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(617, 20, -1, -1));
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
 
+        jButton4.setBackground(new java.awt.Color(80, 34, 1));
+        jButton4.setForeground(new java.awt.Color(255, 255, 255));
         jButton4.setText("View Bill & Order placed details");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(859, 20, -1, -1));
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, -1, -1));
 
+        jButton5.setBackground(new java.awt.Color(80, 34, 1));
+        jButton5.setForeground(new java.awt.Color(255, 255, 255));
         jButton5.setText("Change Security Question");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1169, 20, -1, -1));
+        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, -1, -1));
 
         jButton6.setText("Exit");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
@@ -100,22 +111,32 @@ public class Home extends javax.swing.JFrame {
         });
         getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1434, 20, -1, -1));
 
+        btnCategory.setBackground(new java.awt.Color(80, 34, 1));
+        btnCategory.setForeground(new java.awt.Color(255, 255, 255));
         btnCategory.setText("Manage Category");
         btnCategory.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCategoryActionPerformed(evt);
             }
         });
-        getContentPane().add(btnCategory, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 726, -1, -1));
+        getContentPane().add(btnCategory, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 670, -1, -1));
 
+        btnNewProduct.setBackground(new java.awt.Color(80, 34, 1));
+        btnNewProduct.setForeground(new java.awt.Color(255, 255, 255));
         btnNewProduct.setText("New Product");
-        getContentPane().add(btnNewProduct, new org.netbeans.lib.awtextra.AbsoluteConstraints(719, 726, -1, -1));
+        getContentPane().add(btnNewProduct, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 670, -1, -1));
 
+        btnViewEditDeleteProduct.setBackground(new java.awt.Color(80, 34, 1));
+        btnViewEditDeleteProduct.setForeground(new java.awt.Color(255, 255, 255));
         btnViewEditDeleteProduct.setText("View , Edit & Delete product");
-        getContentPane().add(btnViewEditDeleteProduct, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 726, -1, -1));
+        getContentPane().add(btnViewEditDeleteProduct, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 670, -1, -1));
 
         btnVerifyUsers.setText("Verify Users");
         getContentPane().add(btnVerifyUsers, new org.netbeans.lib.awtextra.AbsoluteConstraints(1419, 726, -1, -1));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/background.PNG"))); // NOI18N
+        jLabel1.setText("jLabel1");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1400, 770));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -204,5 +225,6 @@ new ChangeSecurityQuestion(email).setVisible(true);
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

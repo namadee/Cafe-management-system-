@@ -45,6 +45,8 @@ public class ProductDao {
         String query = "delete from product where id = '"+id+"'";
         Dboperations.setDataOrDelete(query, "Product Deleted Successfully");
     }
+    
+    
     public static ArrayList<Product> getAllRecordsByCategory(String category){
         ArrayList<Product> arrayList = new ArrayList<>();
         try{
@@ -78,4 +80,21 @@ public class ProductDao {
         }
         return arrayList;
     }
+     
+      public static Product getProductByname(String name){
+         Product product = new Product();
+         try{
+             ResultSet rs = Dboperations.getData("select *from product where name='"+name+"'");
+             while(rs.next()){
+                 product.setName(rs.getString(2));
+                 product.setCategory(rs.getString(3));
+                 product.setPrice(rs.getString(4));
+             }
+         }
+         catch(Exception e){
+             JOptionPane.showMessageDialog(null,e);
+         }
+         return product;
+
+     }
 }

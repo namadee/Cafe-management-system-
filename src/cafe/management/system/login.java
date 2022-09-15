@@ -46,6 +46,7 @@ public void clear(){
         btnexit = new javax.swing.JButton();
         btnforPass = new javax.swing.JButton();
         btnclear = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -95,7 +96,7 @@ public void clear(){
                 btnSignupActionPerformed(evt);
             }
         });
-        getContentPane().add(btnSignup, new org.netbeans.lib.awtextra.AbsoluteConstraints(808, 445, -1, -1));
+        getContentPane().add(btnSignup, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 440, -1, -1));
 
         btnexit.setText("Exit");
         btnexit.addActionListener(new java.awt.event.ActionListener() {
@@ -103,7 +104,7 @@ public void clear(){
                 btnexitActionPerformed(evt);
             }
         });
-        getContentPane().add(btnexit, new org.netbeans.lib.awtextra.AbsoluteConstraints(808, 390, -1, -1));
+        getContentPane().add(btnexit, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 390, -1, -1));
 
         btnforPass.setText("Forgot Password?");
         btnforPass.addActionListener(new java.awt.event.ActionListener() {
@@ -119,7 +120,10 @@ public void clear(){
                 btnclearActionPerformed(evt);
             }
         });
-        getContentPane().add(btnclear, new org.netbeans.lib.awtextra.AbsoluteConstraints(686, 390, -1, -1));
+        getContentPane().add(btnclear, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 390, -1, -1));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/login.png"))); // NOI18N
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -225,6 +229,7 @@ public void clear(){
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPasswordField txtPassword;
     private javax.swing.JTextField txtemail;
     // End of variables declaration//GEN-END:variables
