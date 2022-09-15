@@ -13,9 +13,10 @@ import dao.Userdao;
  * @author 94773
  */
 public class Signup extends javax.swing.JFrame {
- 
+
     public String emailPattern = "^[a-zA-Z0-9]+[@]+[a-zA-Z0-9]+[.]+[a-zA-Z0-9]+$";
     public String mobileNumberPattern = "^[0-9]*$ ";
+
     /**
      * Creates new form Signup
      */
@@ -24,7 +25,7 @@ public class Signup extends javax.swing.JFrame {
         btnSave.setEnabled(false);
     }
 
-    public void Clear(){
+    public void Clear() {
         txtName.setText("");
         txtemail.setText("");
         txttelno.setText("");
@@ -34,8 +35,8 @@ public class Signup extends javax.swing.JFrame {
         txtPassword.setText("");
         btnSave.setEnabled(false);
     }
-    
-    public void ValidateFields(){
+
+    public void ValidateFields() {
         String name = txtName.getText();
         String email = txtemail.getText();
         String MobileNumber = txttelno.getText();
@@ -43,12 +44,14 @@ public class Signup extends javax.swing.JFrame {
         String password = txtPassword.getText();
         String SecurityQuestion = txtsecQues.getText();
         String Answer = txtAnswer.getText();
-      if(!name.equals("") && email.matches(emailPattern) && MobileNumber.matches(mobileNumberPattern) && MobileNumber.length() == 10 && !address.equals("") && !password.equals("") && !SecurityQuestion.equals("") && !Answer.equals("") )
-          btnSave.setEnabled(true);
-        else
-          btnSave.setEnabled(false);
-        
+        if (!name.equals("")  && email.matches(emailPattern) && MobileNumber.matches(mobileNumberPattern) && MobileNumber.length() == 10 && !address.equals("") && !password.equals("") && !SecurityQuestion.equals("") && !Answer.equals("")) {
+            btnSave.setEnabled(true);
+        } else {
+            btnSave.setEnabled(false);
+        }
+
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -235,40 +238,42 @@ public class Signup extends javax.swing.JFrame {
     }//GEN-LAST:event_txtNameActionPerformed
 
     private void btnForPassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnForPassActionPerformed
-        // TODO add your handling code here:
+       setVisible(false);
+       new ForgotPassword().setVisible(true);
     }//GEN-LAST:event_btnForPassActionPerformed
 
     private void BtnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnLoginActionPerformed
-        // TODO add your handling code here:
+        setVisible(false);
+        new login().setVisible(true);
     }//GEN-LAST:event_BtnLoginActionPerformed
 
     private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
-  Clear();
-        
+        Clear();
+
     }//GEN-LAST:event_btnClearActionPerformed
 
     private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
-     int a = JOptionPane.showConfirmDialog(null,"Do you really want to Close Application","Select",JOptionPane.YES_NO_OPTION); 
-     if (a==0)
-     {
-             System.exit(0);}// TODO add your handling code here:
+        int a = JOptionPane.showConfirmDialog(null, "Do you really want to Close Application", "Select", JOptionPane.YES_NO_OPTION);
+        if (a == 0) {
+            System.exit(0);
+        }// TODO add your handling code here:
     }//GEN-LAST:event_btnExitActionPerformed
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
         User user = new User();
         user.setName(txtName.getText());
-       user.setEmail(txtemail.getText());
-       user.setMobileNumber(txttelno.getText());
-       user.setAddress(txtAddress.getText());
+        user.setEmail(txtemail.getText());
+        user.setMobileNumber(txttelno.getText());
+        user.setAddress(txtAddress.getText());
         user.setPassword(txtPassword.getText());
-       user.setSecurityQuestion(txtsecQues.getText());
-       user.setAnswer(txtAnswer.getText());
-      Userdao.save(user);
-      Clear();
+        user.setSecurityQuestion(txtsecQues.getText());
+        user.setAnswer(txtAnswer.getText());
+        Userdao.save(user);
+        //Clear();
     }//GEN-LAST:event_btnSaveActionPerformed
 
     private void txtNameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNameKeyReleased
-       ValidateFields();
+        ValidateFields();
     }//GEN-LAST:event_txtNameKeyReleased
 
     private void txtemailKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtemailKeyReleased
@@ -276,23 +281,23 @@ public class Signup extends javax.swing.JFrame {
     }//GEN-LAST:event_txtemailKeyReleased
 
     private void txttelnoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txttelnoKeyReleased
-      ValidateFields();
+        ValidateFields();
     }//GEN-LAST:event_txttelnoKeyReleased
 
     private void txtAddressKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAddressKeyReleased
-      ValidateFields();
+        ValidateFields();
     }//GEN-LAST:event_txtAddressKeyReleased
 
     private void txtPasswordKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPasswordKeyReleased
-       ValidateFields();
+        ValidateFields();
     }//GEN-LAST:event_txtPasswordKeyReleased
 
     private void txtsecQuesKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtsecQuesKeyReleased
-       ValidateFields();
+        ValidateFields();
     }//GEN-LAST:event_txtsecQuesKeyReleased
 
     private void txtAnswerKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAnswerKeyReleased
-       ValidateFields();
+        ValidateFields();
     }//GEN-LAST:event_txtAnswerKeyReleased
 
     /**
