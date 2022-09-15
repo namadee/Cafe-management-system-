@@ -51,4 +51,13 @@ public class Userdao {
         Dboperations.setDataOrDelete(query,"Password changed Succesfully");
     }
     
+    
+    public static void ChangePassword(String email,String OldPassword ,String NewPassword){
+        try{
+             ResultSet rs = Dboperations.getData("Select * from user where email ='"+email+"' and password = '"+OldPassword+"'");
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null,e);
+        }
+    }
 }

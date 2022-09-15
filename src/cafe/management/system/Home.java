@@ -2,13 +2,16 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
+
 package cafe.management.system;
+import javax.swing.JOptionPane;
 
 /**
  *
- * @author 94773
+ * @author Namadee Shakya
  */
 public class Home extends javax.swing.JFrame {
+    public String email;
 
     /**
      * Creates new form Home
@@ -16,9 +19,18 @@ public class Home extends javax.swing.JFrame {
     public Home() {
         initComponents();
     }
-
-    public Home(String email) {
+    
+    public Home(String userEmail)
+    {
         initComponents();
+        email = userEmail;
+        if(!email.equals("admin@gmail.com"))
+        {
+            btnCategory.setVisible(false);
+            btnNewProduct.setVisible(false);
+            btnViewEditDeleteProduct.setVisible(false);
+            btnVerifyUsers.setVisible(false);
+        }
     }
 
     /**
@@ -30,21 +42,102 @@ public class Home extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
+        btnCategory = new javax.swing.JButton();
+        btnNewProduct = new javax.swing.JButton();
+        btnViewEditDeleteProduct = new javax.swing.JButton();
+        btnVerifyUsers = new javax.swing.JButton();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jButton1.setText("Logout");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 20, -1, -1));
+
+        jButton2.setText("Place Order");
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 20, -1, -1));
+
+        jButton3.setText("Change password");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(617, 20, -1, -1));
+
+        jButton4.setText("View Bill & Order placed details");
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(859, 20, -1, -1));
+
+        jButton5.setText("Change Security Question");
+        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1169, 20, -1, -1));
+
+        jButton6.setText("Exit");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1434, 20, -1, -1));
+
+        btnCategory.setText("Manage Category");
+        btnCategory.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCategoryActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnCategory, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 726, -1, -1));
+
+        btnNewProduct.setText("New Product");
+        getContentPane().add(btnNewProduct, new org.netbeans.lib.awtextra.AbsoluteConstraints(719, 726, -1, -1));
+
+        btnViewEditDeleteProduct.setText("View , Edit & Delete product");
+        getContentPane().add(btnViewEditDeleteProduct, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 726, -1, -1));
+
+        btnVerifyUsers.setText("Verify Users");
+        getContentPane().add(btnVerifyUsers, new org.netbeans.lib.awtextra.AbsoluteConstraints(1419, 726, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // TODO add your handling code here:
+        int a = JOptionPane.showConfirmDialog(null,"Do you really want to close the application", "Select", JOptionPane.YES_NO_OPTION);
+        if(a==0)
+        {
+            System.exit(0);
+        }
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+       new ChangePassword(email).setVisible(true);
+        
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        int a = JOptionPane.showConfirmDialog(null, "Do you really want to log out", "Select", JOptionPane.YES_NO_OPTION );
+        if(a==0)
+        {
+            setVisible(false);
+            new login().setVisible(true);
+        }
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void btnCategoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCategoryActionPerformed
+      setVisible(false);
+       new ManageCategory().setVisible(true);
+    }//GEN-LAST:event_btnCategoryActionPerformed
 
     /**
      * @param args the command line arguments
@@ -82,5 +175,15 @@ public class Home extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCategory;
+    private javax.swing.JButton btnNewProduct;
+    private javax.swing.JButton btnVerifyUsers;
+    private javax.swing.JButton btnViewEditDeleteProduct;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
     // End of variables declaration//GEN-END:variables
 }

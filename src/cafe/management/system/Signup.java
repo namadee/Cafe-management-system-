@@ -44,7 +44,7 @@ public class Signup extends javax.swing.JFrame {
         String password = txtPassword.getText();
         String SecurityQuestion = txtsecQues.getText();
         String Answer = txtAnswer.getText();
-        if (!name.equals("") && email.matches(emailPattern) && MobileNumber.matches(mobileNumberPattern) && MobileNumber.length() == 10 && !address.equals("") && !password.equals("") && !SecurityQuestion.equals("") && !Answer.equals("")) {
+        if (!name.equals("")  && email.matches(emailPattern) && MobileNumber.matches(mobileNumberPattern) && MobileNumber.length() == 10 && !address.equals("") && !password.equals("") && !SecurityQuestion.equals("") && !Answer.equals("")) {
             btnSave.setEnabled(true);
         } else {
             btnSave.setEnabled(false);
@@ -269,7 +269,7 @@ public class Signup extends javax.swing.JFrame {
         user.setSecurityQuestion(txtsecQues.getText());
         user.setAnswer(txtAnswer.getText());
         Userdao.save(user);
-        Clear();
+        //Clear();
     }//GEN-LAST:event_btnSaveActionPerformed
 
     private void txtNameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNameKeyReleased
