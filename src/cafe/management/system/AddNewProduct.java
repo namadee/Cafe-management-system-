@@ -170,10 +170,10 @@ public class AddNewProduct extends javax.swing.JFrame {
 
     private void formComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_formComponentShown
         // TODO add your handling code here:
-        ArrayList<Category> list = CategoryDao.getAllRecords();
+        ArrayList<Category> list = CategoryDao.getAllRecord();
         Iterator<Category> itr = list.iterator();
         while (itr.hasNext()) {
-            Category categoryObj = itr.next(n);
+            Category categoryObj = itr.next();
             txtCategory.addItem(categoryObj.getName());
         }
     }//GEN-LAST:event_formComponentShown

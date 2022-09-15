@@ -6,6 +6,7 @@
 package cafe.management.system;
 import javax.swing.JOptionPane;
 
+
 /**
  *
  * @author Namadee Shakya
@@ -76,9 +77,19 @@ public class Home extends javax.swing.JFrame {
         getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(617, 20, -1, -1));
 
         jButton4.setText("View Bill & Order placed details");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(859, 20, -1, -1));
 
         jButton5.setText("Change Security Question");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1169, 20, -1, -1));
 
         jButton6.setText("Exit");
@@ -138,6 +149,14 @@ public class Home extends javax.swing.JFrame {
       setVisible(false);
        new ManageCategory().setVisible(true);
     }//GEN-LAST:event_btnCategoryActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+new ChangeSecurityQuestion(email).setVisible(true);
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+      new ViewBillsOrderPlaceddetails().setVisible(true);
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments
