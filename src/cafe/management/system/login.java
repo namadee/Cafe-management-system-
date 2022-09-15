@@ -9,7 +9,7 @@ import dao.Userdao;
 import javax.swing.ImageIcon; 
 
 public class login extends javax.swing.JFrame {
- public String emailPattern = "^[a-zA-Z0-9]+[@]+[a-zA-Z0-9]+[.]+[a-zA-Z0-9]+$"; 
+    public String emailPattern = "^[a-zA-Z0-9]+[@]+[a-zA-Z0-9]+[.]+[a-zA-Z0-9]+$"; 
     
     public login() {
         initComponents();
@@ -23,7 +23,8 @@ public void clear(){
     public void ValidateFields(){
         String email = txtemail.getText();
         String password = txtPassword.getText();
-        if(email.matches(emailPattern) && !password.equals("")){
+        //email.matches(emailPattern) && 
+        if(!password.equals("")){
             btnlogin.setEnabled(true);
         }
         else{
@@ -145,6 +146,7 @@ public void clear(){
            new Home(email).setVisible(true);
            
        }
+      
    }
            
     }//GEN-LAST:event_btnloginActionPerformed
@@ -154,7 +156,8 @@ public void clear(){
     }//GEN-LAST:event_btnforPassActionPerformed
 
     private void btnSignupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSignupActionPerformed
-        // TODO add your handling code here:
+       setVisible(false);
+       new Signup().setVisible(true);
     }//GEN-LAST:event_btnSignupActionPerformed
 
     private void btnexitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnexitActionPerformed
