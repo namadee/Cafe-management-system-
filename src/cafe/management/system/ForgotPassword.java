@@ -73,6 +73,7 @@ public void ValidateFields(){
         btnclear = new javax.swing.JButton();
         btnSignup = new javax.swing.JButton();
         btnexit = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -83,15 +84,23 @@ public void ValidateFields(){
         jLabel1.setText("Forgot Password?");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 190, -1, -1));
 
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Your Answer");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(458, 398, -1, -1));
 
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Email");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(458, 291, -1, -1));
 
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Your Security Question");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(458, 342, -1, -1));
 
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Enter new Password");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(458, 453, -1, -1));
 
@@ -170,6 +179,10 @@ public void ValidateFields(){
             }
         });
         getContentPane().add(btnexit, new org.netbeans.lib.awtextra.AbsoluteConstraints(923, 507, -1, -1));
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/forgot pword.png"))); // NOI18N
+        jLabel6.setText("jLabel6");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -286,6 +299,7 @@ public void ValidateFields(){
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JTextField txtanswer;
     private javax.swing.JTextField txtemail;
     private javax.swing.JPasswordField txtnewPass;
