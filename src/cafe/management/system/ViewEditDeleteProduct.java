@@ -3,6 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package cafe.management.system;
+import dao.CategoryDao;
+import javax.swing.JOptionPane;
 
 import model.Product;
 import dao.ProductDao;
@@ -10,6 +12,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
+import model.Category;
 
 /**
  *
@@ -60,7 +63,7 @@ public class ViewEditDeleteProduct extends javax.swing.JFrame {
         btnDelete = new javax.swing.JButton();
         btnClear = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        jTable1 = new javax.swing.JTable();
         jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -165,8 +168,8 @@ public class ViewEditDeleteProduct extends javax.swing.JFrame {
         });
         getContentPane().add(btnClear, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 380, -1, -1));
 
-        jTable2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        jTable1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -174,12 +177,12 @@ public class ViewEditDeleteProduct extends javax.swing.JFrame {
                 "ID", "Name", "Category", "Price"
             }
         ));
-        jTable2.addMouseListener(new java.awt.event.MouseAdapter() {
+        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jTable2MouseClicked(evt);
+                jTable1MouseClicked(evt);
             }
         });
-        jScrollPane2.setViewportView(jTable2);
+        jScrollPane2.setViewportView(jTable1);
 
         getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 150, -1, -1));
 
@@ -209,7 +212,7 @@ public class ViewEditDeleteProduct extends javax.swing.JFrame {
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
         // TODO add your handling code here:
         Product product = new Product();
-        int id = Integer.passInt(lblId.getText());
+        int id = Integer.parseInt(lblId.getText());
         product.setId(id);
         product.setName(txtName.getText());
         product.setCategory((String) jComboBox1.getSelectedItem());
@@ -227,12 +230,13 @@ public class ViewEditDeleteProduct extends javax.swing.JFrame {
     private void txtPriceKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPriceKeyReleased
         // TODO add your handling code here:
         validateField();
+        
     }//GEN-LAST:event_txtPriceKeyReleased
 
     private void formComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_formComponentShown
         // TODO add your handling code here:
-        DefaultTableModel dtm = (DefaultTableModel) jTable.getModel();
-        ArrayList<Product> list = ProductionDao.getAllRecords();
+        DefaultTableModel dtm = (DefaultTableModel) jTable1.getModel();
+        ArrayList<Product> list = ProductDao.getAllRecords();
         Iterator<Product> itr = list.iterator();
         while (itr.hasNext()) {
             Product productObj = itr.next();
@@ -241,9 +245,9 @@ public class ViewEditDeleteProduct extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_formComponentShown
 
-    private void jTable2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable2MouseClicked
+    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
         // TODO add your handling code here:
-        int index = jTable.getSelectedRow();
+        int index = jTable1.getSelectedRow();
         TableModel model = jTable1.getModel();
         String id = model.getValueAt(index, 0).toString();
         lblId.setText(id);
@@ -257,7 +261,7 @@ public class ViewEditDeleteProduct extends javax.swing.JFrame {
         btnDelete.setEnabled(true);
         jComboBox1.removeAllItems();
         jComboBox1.addItem(category);
-        ArrayList<Category> categoryList = CategoryDao.getAllRecords();
+        ArrayList<Category> categoryList = CategoryDao.getAllRecord();
         Iterator<Category> categoryItr = categoryList.iterator();
         while (categoryItr.hasNext()) {
             Category categoryObj = categoryItr.next();
@@ -265,12 +269,12 @@ public class ViewEditDeleteProduct extends javax.swing.JFrame {
                 jComboBox1.addItem(categoryObj.getName());
             }
         }
-    }//GEN-LAST:event_jTable2MouseClicked
+    }//GEN-LAST:event_jTable1MouseClicked
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
         // TODO add your handling code here:
         String id = lblId.getText();
-        int a = JOptionPane.showConfirmDialog(null, "Do you want to Delete this product", "Select", JOptionPane.YES_NO_OPTION) );
+        int a = JOptionPane.showConfirmDialog(null, "Do you want to Delete this product", "Select", JOptionPane.YES_NO_OPTION );
         if (a == 0) {
             ProductDao.delete(id);
             setVisible(false);
@@ -326,7 +330,7 @@ public class ViewEditDeleteProduct extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable2;
+    private javax.swing.JTable jTable1;
     private javax.swing.JLabel lblId;
     private javax.swing.JTextField txtName;
     private javax.swing.JTextField txtPrice;

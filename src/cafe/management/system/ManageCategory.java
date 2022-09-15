@@ -53,7 +53,8 @@ public class ManageCategory extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         textName = new javax.swing.JTextField();
         btnSave = new javax.swing.JButton();
-        btnClear = new javax.swing.JButton();
+        btnUpdate = new javax.swing.JButton();
+        btnClear1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocation(new java.awt.Point(350, 134));
@@ -97,7 +98,7 @@ public class ManageCategory extends javax.swing.JFrame {
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 62, 263, 272));
 
         jLabel3.setText("Click on row to delete Category");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(409, 346, -1, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 340, -1, -1));
 
         jLabel4.setText("Add New Category");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(99, 146, -1, -1));
@@ -117,13 +118,21 @@ public class ManageCategory extends javax.swing.JFrame {
         });
         getContentPane().add(btnSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 208, -1, -1));
 
-        btnClear.setText("Clear");
-        btnClear.addActionListener(new java.awt.event.ActionListener() {
+        btnUpdate.setText("Clear");
+        btnUpdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnClearActionPerformed(evt);
+                btnUpdateActionPerformed(evt);
             }
         });
-        getContentPane().add(btnClear, new org.netbeans.lib.awtextra.AbsoluteConstraints(223, 208, -1, -1));
+        getContentPane().add(btnUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 340, -1, -1));
+
+        btnClear1.setText("Clear");
+        btnClear1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnClear1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnClear1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 210, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -150,7 +159,7 @@ public class ManageCategory extends javax.swing.JFrame {
     private void formComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_formComponentShown
         // TODO add your handling code here:
         DefaultTableModel dtm = (DefaultTableModel) categoryTable.getModel();
-        ArrayList<Category> list = CategoryDao.getAllRecords();
+        ArrayList<Category> list = CategoryDao.getAllRecord();
         Iterator<Category> itr = list.iterator();
         while (itr.hasNext()) {
             Category categoryObj = itr.next();
@@ -172,11 +181,17 @@ public class ManageCategory extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_categoryTableMouseClicked
 
-    private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
-        // TODO add your handling code here:
+    private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
+       
         setVisible(false);
         new ManageCategory().setVisible(true);
-    }//GEN-LAST:event_btnClearActionPerformed
+
+    }//GEN-LAST:event_btnUpdateActionPerformed
+
+    private void btnClear1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClear1ActionPerformed
+        setVisible(false);
+        new ManageCategory().setVisible(true);
+    }//GEN-LAST:event_btnClear1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -214,8 +229,9 @@ public class ManageCategory extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnClear;
+    private javax.swing.JButton btnClear1;
     private javax.swing.JButton btnSave;
+    private javax.swing.JButton btnUpdate;
     private javax.swing.JTable categoryTable;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;

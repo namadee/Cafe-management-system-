@@ -152,7 +152,8 @@ public void clear(){
     }//GEN-LAST:event_btnloginActionPerformed
 
     private void btnforPassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnforPassActionPerformed
-        
+         setVisible(false);
+       new ForgotPassword().setVisible(true);
     }//GEN-LAST:event_btnforPassActionPerformed
 
     private void btnSignupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSignupActionPerformed

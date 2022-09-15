@@ -25,6 +25,7 @@ public class Dboperations {
             JOptionPane.showMessageDialog(null,e,"Message",JOptionPane.ERROR_MESSAGE);
         }
     }
+    
     public static ResultSet getData(String query){
         try{
             Connection con = ConnectionProvider.getCon();
